@@ -1,5 +1,5 @@
 
-![Logo](https://lh3.googleusercontent.com/proxy/-drrdoBY9Qv3owat1bxLBwX5QL1sMgm4buocDD4jgrGndhK-nrhWAJ7SnAqJZCdY2wT_sOZy2idjYQSjlJVYcLBa_1CVB-wG9bZHLvAL1jpufIQDCKAx)
+![Logo](https://lh3.googleusercontent.com/proxy/ZknwG39pcGbnTOaw5w_GUlsTTothCruHpRELbMqw9DDMAJnjckusyW97cXJwaojta-Pm7J8YPEhwVtR10oxgau962omdIxNAMftey2n_9imclwmIwYm9)
 
 # EDEM_Exercises_Statistics_Python
 Activities that we carried out for statistics subject at EDEM
