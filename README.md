@@ -51,6 +51,11 @@ wbr.tail()
 
 ### Session 01: Describing nominal and quantitative data
 
+- [ ] **Session 01: Describing nominal and quantitative data**
+- [ ] Session 02: Subsetting data & avoiding artifacts
+- [ ] Session 03: Recoding data
+- [ ] Session 04: Bivariate analysis
+
 ##### A. Quantitative data
 ```
 wbr.cnt.describe()
@@ -149,7 +154,7 @@ plt.text(2,60,text, bbox=props)
 ### Session 02: Subsetting data & avoiding artifacts
 
 - [x] Session 01: Describing nominal and quantitative data
-- [ ] Session 02: Subsetting data & avoiding artifacts
+- [ ] **Session 02: Subsetting data & avoiding artifacts**
 - [ ] Session 03: Recoding data
 - [ ] Session 04: Bivariate analysis
 
