@@ -263,4 +263,46 @@ plt.title("Quality Control OK" "\n")
 
 ##### A. Mean comparisons (Nominal vs Quantitative)
 
+###### Why some days are rent more bikes than other days in Washington D.C.?
+###### Case 01: Number of rentals vs is/not working day
+
+##### Describing "Working day"
+
+Recoding
+
+```
+wbr["wd_st"] = wbr.workingday
+wbr.wd_st = wbr.wd_st.replace(to_replace=0, value="No")
+wbr.wd_st = wbr.wd_st.replace(to_replace=1, value="Yes")
+
+my_categories=["No", "Yes"]
+my_datatype = CategoricalDtype(categories=my_categories, ordered=True)
+wbr["wd_cat"] = wbr.wd_st.astype(my_datatype)
+
+wbr.groupby(["wd_cat"]).size()
+```
+No = **231** | Yes = **500** 
+
+Percentages
+
+```
+mytab=pd.crosstab(index=wbr["wd_cat"], columns="count")
+print (mytab)
+n=mytab.sum()
+mytab2=mytab/n*100
+print(mytab2)
+```
+No = **31.60** | Yes = **68.40** 
+
+Plot the data
+
+```
+plt.bar(mytab2.index, mytab2['count'])
+plt.xlabel('Working Day')
+plt.title('Figure 03. Percentage of Working Days')
+```
+![Working_day](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/08.png)
+
+
+
 
