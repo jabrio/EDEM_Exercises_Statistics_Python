@@ -57,4 +57,10 @@ wbr.cnt.describe()
 ```
 ![wbr.cnt.describe](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/19.png) 
 
+```
+M=wbr.cnt.mean()
+S=wbr.cnt.std()
+c1=M-S
+c2=M+S
+
 
