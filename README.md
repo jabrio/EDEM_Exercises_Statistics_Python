@@ -198,5 +198,5 @@ plt.title ("Temperature in Washington DC. 2011-2012" "\n")
 
 - [x] Session 01: Describing nominal and quantitative data
 - [x] Session 02: Subsetting data & avoiding artifacts
-- [ ] Session 03: Recoding data
+- [ ] **Session 03: Recoding data**
 - [ ] Session 04: Bivariate analysis
