@@ -323,4 +323,6 @@ stats.ttest_ind(cnt_wd, cnt_nwd, equal_var = False)
 ```
 Ttest = **1.601** | pval = **0.11**
 
-**Rentals ≠ Working day**
+**pval>0.05 --> Rentals in Working day = Rentals in Holidays**
+
+
