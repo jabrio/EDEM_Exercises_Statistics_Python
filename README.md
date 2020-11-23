@@ -13,3 +13,13 @@ Activities that we carried out for statistics subject at EDEM
 - Learning to learn Python autonomously.
 ```
 
+**01 | Libraries**
+
+```
+import os
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt 
+from pandas.api.types import CategoricalDtype 
+import scipy.stats as stats   
+import seaborn as sns
