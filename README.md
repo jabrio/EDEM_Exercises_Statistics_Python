@@ -389,7 +389,7 @@ plt.xticks((0,1), ("2011", "2012"))
 plt.xlabel("year")
 plt.title('Figure 05. Average rentals by year.''\n')
 ```
-![Mean_Comparison_WD](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/10.png)
+![Mean_Comparison_YR](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/10.png)
 
 #### Case 03: Number of rentals by Weather situation
 
@@ -410,7 +410,7 @@ stats.f_oneway(cnt_sunny, cnt_cloudy, cnt_rainy)
 ```
 Ttest = **40.066** | pval = **0.000**
 
-**pval<0.05 --> Rentals differ in at least 2 of the 3 groups compared.
+**pval<0.05 --> Rentals differ in at least 2 of the 3 groups compared.**
 
 ##### Plot the data
 
@@ -429,10 +429,44 @@ plt.text(1.6, 5000,text_1, bbox=props)
 plt.xlabel("\n" "year")
 plt.title('Figure 06. Average rentals by weather situation.''\n')
 ```
-![Mean_Comparison_WD](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/11.png)
+![Mean_Comparison_WS](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/11.png)
 
 
+##### B. Percentage comparisons (Nominal vs Nominal)
 
+###### Why some days are rent more bikes than other days in Washington D.C.?
+#### Case 01: ¿Is the same percentage of days with low/average/high rentals in working days vs not working days?
 
+![Prc_Comparison_WD](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/23.png)
 
+##### Crosstabulation
+
+```
+my_ct=pd.crosstab(wbr.order_rentals, wbr.wd_cat, normalize='columns', margins=True)*100
+ct= pd.crosstab(wbr.order_rentals, wbr.wd_cat)
+```
+##### Chi2 test
+```
+stats.chi2_contingency(ct)
+```
+Chi2 = **4.983** | pval = **0.08**
+
+**pval>0.05 --> Percentage of days with low/average/high rentals is the same in working days vs. not working days.
+
+##### Plot the data
+
+```
+my_ct.plot(kind="bar")
+#sale al revés de lo que buscamos
+my_ct2= my_ct.transpose()
+my_ct2.plot(kind="bar", edgecolor="Black", colormap="Blues")
+props = dict(boxstyle='round', facecolor='white', lw=0.5) 
+plt.text(-0.4, 81, 'Chi2: 4.983''\n''n: 731' '\n' 'Pval.: 0.083', bbox=props)
+plt.ylim(0,100)
+plt.legend(['Low rentals','Average rentals','High rentals']) 
+plt.xlabel("Working day" "\n")
+plt.title("Figure 07. Percentage of Rental Level by Working Day" "\n")
+plt.xticks(rotation='horizontal')
+```
+![Prc_Comparison_Plot](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/13.png)
 
