@@ -118,14 +118,27 @@ wbr.groupby(["ws"]).size()
 
 Cloudy = **247** | Rainy = **21** | Sunny = **463**
 
-##### Order the variables
+##### Order the variables & make percentages
 
 ```
 bar_list=["Sunny", "Cloudy", "Rainy"]
 order_new= CategoricalDtype(categories=bar_list, ordered=True)
 wbr["order_new"]=wbr.ws.astype(order_new)
-A=wbr.groupby(["order_new"]).size()
-plt.bar(bar_list, A, edgecolor="Black")
+
+```
+```
+mytable=wbr.groupby(["order_new"]).size()
+mytable_02=mytable/n*100
+print(mytable_02)
+plt.bar(bar_list, mytable_02, edgecolor="Black")
+```
+```
+plt.ylabel("Percentage")
+plt.title ("Figure 02. Percentage of weather situation")
+text="n=731"
+props=dict(boxstyle="round", facecolor="white", lw=0.5)
+plt.text(2,60,text, bbox=props)
 ```
 
+![plt.bar](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/04.png) 
 
