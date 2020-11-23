@@ -19,7 +19,6 @@ Activities that we carried out for statistics subject at EDEM
 import os
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt 
-from pandas.api.types import CategoricalDtype 
+import matplotlib.pyplot as plt  
 import scipy.stats as stats   
 import seaborn as sns
