@@ -62,5 +62,39 @@ M=wbr.cnt.mean()
 S=wbr.cnt.std()
 c1=M-S
 c2=M+S
+```
+
+##### Plot the data
+
+```
+x=wbr.cnt
+plt.hist(x, edgecolor="Black")
+plt.ylabel("Frecuency")
+plt.xlabel("Daily rentals")
+plt.title("Figure 01. Daily Bicycle rentals in Washington DC \n by Capital Bikeshare. 2011-2012")
+```
+
+```
+plt.axvline(x=M,
+            linewidth=1,
+            linestyle="solid",
+            Color="red",
+            label="Mean")
+
+plt.axvline(x=c1,
+            linewidth=1,
+            linestyle="dashed",
+            Color="green",
+            label="- SD")
+
+plt.axvline(x=c2,
+            linewidth=1,
+            linestyle="dashed",
+            Color="green",
+            label="+ SD")
+```
+
+
+
 
 
