@@ -532,5 +532,34 @@ props = dict(boxstyle='round', facecolor='white', lw=0.5)
 text_scatter= "r: 0.62 \nn: 930 \nPval.: 0.000"
 plt.text(2.5, 7500, text_scatter , bbox=props)
 ```
-![Correlation_SP01](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/16_.png)
+![Correlation_SP01](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/26.png)
+
+#### Adding new variables: by Year.
+
+```
+plt.figure(figsize=(5,5))
+plt.scatter (wbr.temp_celsius[wbr.yr==0], (wbr.cnt)[wbr.yr==0], s=20, marker="s", facecolors="none", edgecolors="C0", label="2011")
+plt.scatter (wbr.temp_celsius[wbr.yr==1], (wbr.cnt)[wbr.yr==1], s=20, marker="s", facecolors="none", edgecolors="C1", label="2012")
+plt.legend (loc="upper left")
+plt.ylabel("Number of Rentals")
+plt.xlabel("Temperature in Celsius")
+plt.title("Figure 10. Daily rentals, by Temperature" "\n")
+```
+![Correlation_SP02](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/17.png)
+
+#### Adding new variables: by Season.
+
+```
+plt.figure(figsize=(5,5))
+plt.scatter (wbr.temp_celsius[wbr.season==1], (wbr.cnt)[wbr.season==1], s=20, marker="s", facecolors="none", edgecolors="C0", label="Winter")
+plt.scatter (wbr.temp_celsius[wbr.season==2], (wbr.cnt)[wbr.season==2], s=20, marker="s", facecolors="none", edgecolors="C1", label="Spring")
+plt.scatter (wbr.temp_celsius[wbr.season==3], (wbr.cnt)[wbr.season==3], s=20, marker="s", facecolors="none", edgecolors="C2", label="Summer")
+plt.scatter (wbr.temp_celsius[wbr.season==4], (wbr.cnt)[wbr.season==4], s=20, marker="s", facecolors="none", edgecolors="C3", label="Fall")
+plt.legend (loc="upper left")
+plt.ylabel("Number of Rentals")
+plt.xlabel("Temperature in Celsius")
+plt.title("Figure 10. Daily rentals, by Temperature" "\n"))
+```
+![Correlation_SP02](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/17.png)
+
 
