@@ -66,7 +66,7 @@ c2=M+S
 
 ##### Plot the data
 
-```
+```ruby
 x=wbr.cnt
 plt.hist(x, edgecolor="Black")
 plt.ylabel("Frecuency")
@@ -74,7 +74,7 @@ plt.xlabel("Daily rentals")
 plt.title("Figure 01. Daily Bicycle rentals in Washington DC \n by Capital Bikeshare. 2011-2012")
 ```
 
-```
+```ruby
 plt.axvline(x=M,
             linewidth=1,
             linestyle="solid",
@@ -94,7 +94,7 @@ plt.axvline(x=c2,
             label="+ SD")
 ```
 
-```
+```ruby
 text="n=731"
 props=dict(boxstyle="round", facecolor="white", lw=0.5)
 plt.text(0,130,text, bbox=props)
