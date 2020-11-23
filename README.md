@@ -21,7 +21,7 @@ Activities that we carried out for statistics programming subject at EDEM.
 
 **01 | Libraries**
 
-```
+```ruby
 import os
 import pandas as pd
 import numpy as np
@@ -32,7 +32,7 @@ import seaborn as sns
 
 **02 | Read File**
 
-```ruby
+```
 os.chdir('the path to your working directory here')
 os.getcwd()
 ```
@@ -44,7 +44,7 @@ wbr.shape
 ```
 ##### (731, 16)
 
-```ruby
+```
 wbr.head()
 wbr.tail()
 ```
