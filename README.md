@@ -36,7 +36,7 @@ import seaborn as sns
 os.chdir('the path to your working directory here')
 os.getcwd()
 ```
-```
+```ruby
 wbr = pd.read_csv ("WBR_11_12_denormalized_temp.csv", sep=';', decimal=',')
 ```
 ```
