@@ -22,3 +22,15 @@ import numpy as np
 import matplotlib.pyplot as plt  
 import scipy.stats as stats   
 import seaborn as sns
+```
+
+**02 | Read File**
+
+```
+wbr = pd.read_csv ("WBR_11_12_denormalized_temp.csv", sep=';', decimal=',')
+```
+```
+wbr.shape
+wbr.head()
+wbr.tail()
+
