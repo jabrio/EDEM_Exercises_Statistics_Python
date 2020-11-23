@@ -94,7 +94,13 @@ plt.axvline(x=c2,
             label="+ SD")
 ```
 
-
+```
+text="n=731"
+props=dict(boxstyle="round", facecolor="white", lw=0.5)
+plt.text(0,130,text, bbox=props)
+plt. legend(loc='upper left', bbox_to_anchor=(0.73, 0.98))
+```
+![plt.hist](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/03.png) 
 
 
 
