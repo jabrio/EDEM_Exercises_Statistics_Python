@@ -130,13 +130,13 @@ wbr["order_new"]=wbr.ws.astype(order_new)
 mytable=wbr.groupby(["order_new"]).size()
 mytable_02=mytable/n*100
 print(mytable_02)
-plt.bar(bar_list, mytable_02, edgecolor="Black")
 ```
 Sunny = **63.33** | Cloudy = **33.79** | Rainy = **2.88**
 
 ##### Plot the data
 
 ```
+plt.bar(bar_list, mytable_02, edgecolor="Black")
 plt.ylabel("Percentage")
 plt.title ("Figure 02. Percentage of weather situation")
 text="n=731"
