@@ -440,7 +440,6 @@ plt.title('Figure 06. Average rentals by weather situation.''\n')
 ![Prc_Comparison_WD](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/23.png)
 
 ##### Crosstabulation
-
 ```
 my_ct=pd.crosstab(wbr.order_rentals, wbr.wd_cat, normalize='columns', margins=True)*100
 ct= pd.crosstab(wbr.order_rentals, wbr.wd_cat)
@@ -457,7 +456,6 @@ Chi2 = **4.983** | pval = **0.08**
 
 ```
 my_ct.plot(kind="bar")
-#sale al revés de lo que buscamos
 my_ct2= my_ct.transpose()
 my_ct2.plot(kind="bar", edgecolor="Black", colormap="Blues")
 props = dict(boxstyle='round', facecolor='white', lw=0.5) 
@@ -469,4 +467,37 @@ plt.title("Figure 07. Percentage of Rental Level by Working Day" "\n")
 plt.xticks(rotation='horizontal')
 ```
 ![Prc_Comparison_Plot](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/13.png)
+
+#### Case 01: ¿Is the same percentage of days with low/average/high rentals in sunny/cloudy/rainy days?
+
+![Prc_Comparison_WD](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/24.png)
+
+##### Crosstabulation
+```
+my_ct_=pd.crosstab(wbr.order_rentals, wbr.order_new, normalize='columns', margins=True)*100
+ct_02=pd.crosstab(wbr.order_rentals, wbr.order_new) 
+```
+##### Chi2 test
+```
+stats.chi2_contingency(ct_02)
+```
+Chi2 = **68.766** | pval = **0.000**
+
+**pval<0.05 --> Percentage of days with low/average/high rentals is not the same in sunny/cloudy/rainy days.
+
+##### Plot the data
+
+```
+my_ct2_02=my_ct_.transpose()
+my_ct2_02.plot(kind="bar", edgecolor="Black", colormap="Blues")
+props = dict(boxstyle='round', facecolor='white', lw=0.5) 
+plt.text(-0.4, 81, 'Chi2: 4.13''\n''n: 731' '\n' 'Pval.: 0.000', bbox=props)
+plt.ylim(0,100)
+plt.legend(['Low rentals','Average rentals','High rentals']) 
+plt.xlabel("Weather situation" "\n")
+plt.title("Figure 08. Percentage of Rental Level \n by Weather situation" "\n")
+plt.xticks(rotation='horizontal')
+```
+![Prc_Comparison_WD](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/14.png)
+
 
