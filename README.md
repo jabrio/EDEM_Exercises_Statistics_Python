@@ -5,7 +5,7 @@
 Activities that we carried out for statistics subject at EDEM
 
 
-**Objectives**
+**00.Objectives**
 
 ```
 Make you fluent and comfortable in data management with Python.
