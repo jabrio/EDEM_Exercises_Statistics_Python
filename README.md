@@ -32,7 +32,7 @@ wbr = pd.read_csv ("WBR_11_12_denormalized_temp.csv", sep=';', decimal=',')
 ```
 wbr.shape
 ```
-###### (731, 16)
+##### (731, 16)
 
 ```
 wbr.head()
