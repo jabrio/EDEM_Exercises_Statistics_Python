@@ -118,6 +118,14 @@ wbr.groupby(["ws"]).size()
 
 Cloudy = **247** | Rainy = **21** | Sunny = **463**
 
+##### Order the variables
 
+```
+bar_list=["Sunny", "Cloudy", "Rainy"]
+order_new= CategoricalDtype(categories=bar_list, ordered=True)
+wbr["order_new"]=wbr.ws.astype(order_new)
+A=wbr.groupby(["order_new"]).size()
+plt.bar(bar_list, A, edgecolor="Black")
+```
 
 
