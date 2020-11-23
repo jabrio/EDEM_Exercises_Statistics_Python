@@ -146,3 +146,11 @@ plt.text(2,60,text, bbox=props)
 
 ![plt.bar](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/04.png) 
 
+### Session 02: Subsetting data & avoiding artifacts
+
+```
+- [x]Session 01: Describing nominal and quantitative data
+- [ ]Session 02: Subsetting data & avoiding artifacts
+- [ ]Session 03: Recoding data
+- [ ]Session 04: Bivariate analysis
+
