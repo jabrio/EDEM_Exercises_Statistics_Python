@@ -194,4 +194,9 @@ plt.title ("Temperature in Washington DC. 2011-2012" "\n")
 ```
 ![temp_celsius_plot](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/06.png)
 
+### Session 03: Recoding data
 
+- [x] Session 01: Describing nominal and quantitative data
+- [x] Session 02: Subsetting data & avoiding artifacts
+- [ ] Session 03: Recoding data
+- [ ] Session 04: Bivariate analysis
