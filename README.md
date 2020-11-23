@@ -4,10 +4,9 @@
 ## EDEM_Exercises_Statistics_Python
 Activities that we carried out for statistics subject at EDEM
 
-```
-Objectives
 
-```
+**Objectives**
+
 ```
 Make you fluent and comfortable in data management with Python.
 Make you competent in data-based decision making.
