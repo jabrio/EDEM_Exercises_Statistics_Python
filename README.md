@@ -312,7 +312,7 @@ wbr.groupby("wd_cat").cnt.mean()
 ```
 No = **4330.17** | Yes = **4584.82**
 
-##### t test
+##### T test
 
 ```
 cnt_wd=wbr.loc[wbr.wd_cat=='Yes', "cnt"]
@@ -324,5 +324,23 @@ stats.ttest_ind(cnt_wd, cnt_nwd, equal_var = False)
 Ttest = **1.601** | pval = **0.11**
 
 **pval>0.05 --> Rentals in Working day = Rentals in Holidays**
+
+##### Plot the data
+
+```
+plt.figure(figsize=(5,5))
+ax = sns.pointplot(x="wd_cat", y="cnt", data=wbr,ci=95, join=0) 
+plt.yticks(np.arange(3000, 7000, step=500))
+plt.ylim(2800,6200)
+plt.axhline(y=M,
+            linewidth=1,
+            linestyle= 'dashed',
+            color="green")
+props = dict(boxstyle="round" ,facecolor="White", lw=0.5)
+text_1='Mean:4504.3''\n''n:731' '\n' 't:1.601' '\n' 'Pval.:0.110'
+plt.text(0.95, 5500,text_1, bbox=props)
+plt.xlabel('Working Day')
+plt.title('Figure 04. Average rentals by Working Day.''\n')
+```
 
 
