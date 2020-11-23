@@ -21,7 +21,7 @@ Activities that we carried out for statistics programming subject at EDEM.
 
 **01 | Libraries**
 
-```ruby
+```
 import os
 import pandas as pd
 import numpy as np
