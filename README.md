@@ -450,7 +450,7 @@ stats.chi2_contingency(ct)
 ```
 Chi2 = **4.983** | pval = **0.08**
 
-**pval>0.05 --> Percentage of days with low/average/high rentals is the same in working days vs. not working days.
+**pval>0.05 --> Percentage of days with low/average/high rentals is the same in working days vs. not working days.**
 
 ##### Plot the data
 
@@ -468,7 +468,7 @@ plt.xticks(rotation='horizontal')
 ```
 ![Prc_Comparison_Plot](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/13.png)
 
-#### Case 01: ¿Is the same percentage of days with low/average/high rentals in sunny/cloudy/rainy days?
+#### Case 02: ¿Is the same percentage of days with low/average/high rentals in sunny/cloudy/rainy days?
 
 ![Prc_Comparison_WD](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/24.png)
 
@@ -483,7 +483,7 @@ stats.chi2_contingency(ct_02)
 ```
 Chi2 = **68.766** | pval = **0.000**
 
-**pval<0.05 --> Percentage of days with low/average/high rentals is not the same in sunny/cloudy/rainy days.
+**pval<0.05 --> Percentage of days with low/average/high rentals is not the same in sunny/cloudy/rainy days.**
 
 ##### Plot the data
 
@@ -500,4 +500,37 @@ plt.xticks(rotation='horizontal')
 ```
 ![Prc_Comparison_WD](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/14.png)
 
+##### C. Correlation (Quantitative vs Quantitative)
+
+###### Why some days are rent more bikes than other days in Washington D.C.?
+#### Case 01: ¿Is there linear association between temperature and number of rentals??
+
+![Correlation](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/25.png)
+
+##### Pearson's r
+```
+X=wbr.temp_celsius
+Y=wbr.cnt
+
+from scipy.stats.stats import pearsonr
+res=pearsonr(X, Y)
+print(res)
+```
+Pearson's r = **0.627** | pval = **0.000**
+
+**pval<0.05 --> There is a linear association between the number of rentals and the temperature.**
+
+##### Plot the data
+
+```
+plt.figure(figsize=(5,5))
+plt.scatter(X,Y,facecolors="none", edgecolor="C0")
+plt.xlabel("Number of Rentals")
+plt.ylabel("Temperature in Celsius")
+plt.title("Figure 09. Daily rentals, by Temperature" "\n")
+props = dict(boxstyle='round', facecolor='white', lw=0.5) 
+text_scatter= "r: 0.62 \nn: 930 \nPval.: 0.000"
+plt.text(2.5, 7500, text_scatter , bbox=props)
+```
+![Correlation_SP01](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/16_.png)
 
