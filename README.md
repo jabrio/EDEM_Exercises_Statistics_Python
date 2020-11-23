@@ -116,7 +116,7 @@ wbr.loc[(wbr["weathersit"]==3),"ws"]="Rainy"
 wbr.groupby(["ws"]).size()
 ```
 
-####### Cloudy = **247** | Rainy = **21** | Sunny = **463**
+Cloudy = **247** | Rainy = **21** | Sunny = **463**
 
 
 
