@@ -560,6 +560,6 @@ plt.ylabel("Number of Rentals")
 plt.xlabel("Temperature in Celsius")
 plt.title("Figure 10. Daily rentals, by Temperature" "\n"))
 ```
-![Correlation_SP02](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/17.png)
+![Correlation_SP02](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/18.png)
 
 
