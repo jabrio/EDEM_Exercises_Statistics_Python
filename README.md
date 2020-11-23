@@ -268,7 +268,7 @@ plt.title("Quality Control OK" "\n")
 
 ##### Describing "Working day"
 
-Recoding
+##### Recoding
 
 ```
 wbr["wd_st"] = wbr.workingday
@@ -283,7 +283,7 @@ wbr.groupby(["wd_cat"]).size()
 ```
 No = **231** | Yes = **500** 
 
-Percentages
+##### Percentages
 
 ```
 mytab=pd.crosstab(index=wbr["wd_cat"], columns="count")
@@ -294,7 +294,7 @@ print(mytab2)
 ```
 No = **31.60** | Yes = **68.40** 
 
-Plot the data
+##### Plot the data
 
 ```
 plt.bar(mytab2.index, mytab2['count'])
@@ -303,6 +303,7 @@ plt.title('Figure 03. Percentage of Working Days')
 ```
 ![Working_day](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/08.png)
 
+##### ¿Rentals depend on the working day?
 
-
+![WD+CNT](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/22.png)
 
