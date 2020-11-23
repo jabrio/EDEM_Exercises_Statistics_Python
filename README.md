@@ -307,3 +307,19 @@ plt.title('Figure 03. Percentage of Working Days')
 
 ![WD+CNT](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/22.png)
 
+```
+wbr.groupby("wd_cat").cnt.mean()
+```
+No = **4330.17** | Yes = **4584.82**
+
+##### t test
+
+```
+cnt_wd=wbr.loc[wbr.wd_cat=='Yes', "cnt"]
+cnt_nwd=wbr.loc[wbr.wd_cat=='No', "cnt"]
+```
+```
+stats.ttest_ind(cnt_wd, cnt_nwd, equal_var = False)
+```
+Ttest = **1.601** | pval = **0.11**
+
