@@ -205,3 +205,62 @@ plt.title ("Temperature in Washington DC. 2011-2012" "\n")
 - [x] Session 02: Subsetting data & avoiding artifacts
 - [ ] **Session 03: Recoding data**
 - [ ] Session 04: Bivariate analysis
+
+###### we want to classify the rentals in: Low rentals, Average rentals and High rentals:
+###### The breakpoints will be c1=M-S and c2=M+S
+
+```
+wbr.loc[  (wbr['cnt']<(c1)) ,"cnt_str"]= "Low rentals"
+wbr.loc[ ((wbr['cnt']>(c1)) & (wbr['cnt']<(c2))) ,"cnt_str"]= "Average rentals"
+wbr.loc[  (wbr['cnt']>(c2)) ,"cnt_str"]= "High rentals"
+```
+
+```
+wbr.groupby(["cnt_str"]).size()
+```
+Average rentals = **443** | High rentals = **143** | Low rentals = **145**
+
+##### New order & plot the data
+
+```
+rental_list=["Low rentals", "Average rentals", "High rentals"]
+order_rentals= CategoricalDtype(categories=rental_list, ordered=True)
+wbr["order_rentals"]=wbr.cnt_str.astype(order_rentals)
+B=wbr.groupby(["order_rentals"]).size()
+plt.bar(rental_list, B, edgecolor="Black")
+```
+
+![Rentals_hist](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/12.png)
+
+##### Quality control
+
+```
+plt.scatter(wbr.cnt, wbr.cnt_str, s=1)
+plt.axvline(x=c1,
+            linewidth=1,
+            linestyle="dashed",
+            Color="green",
+            label="- SD")
+
+plt.axvline(x=c2,
+            linewidth=1,
+            linestyle="dashed",
+            Color="green",
+            label="+ SD")
+
+plt.title("Quality Control OK" "\n")
+```
+
+![Rentals_QC](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/07.png)
+
+
+### Session 04: Bivariate analysis
+
+- [x] Session 01: Describing nominal and quantitative data
+- [x] Session 02: Subsetting data & avoiding artifacts
+- [x] Session 03: Recoding data
+- [ ] **Session 04: Bivariate analysis**
+
+##### A. Mean comparisons (Nominal vs Quantitative)
+
+
