@@ -40,3 +40,18 @@ wbr.tail()
 ```
 
 ### Session 01: Describing nominal and quantitative data
+
+```
+wbr.cnt.describe()
+```
+
+count     731.000000
+mean     4504.348837
+std      1937.211452
+min        22.000000
+25%      3152.000000
+50%      4548.000000
+75%      5956.000000
+max      8714.000000
+Name: cnt, dtype: float64
+
