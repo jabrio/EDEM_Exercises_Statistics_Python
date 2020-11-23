@@ -39,4 +39,4 @@ wbr.head()
 wbr.tail()
 ```
 
-## Session 01: Describing nominal and quantitative data
+### Session 01: Describing nominal and quantitative data
