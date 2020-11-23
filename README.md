@@ -148,9 +148,50 @@ plt.text(2,60,text, bbox=props)
 
 ### Session 02: Subsetting data & avoiding artifacts
 
-
 - [x] Session 01: Describing nominal and quantitative data
 - [ ] Session 02: Subsetting data & avoiding artifacts
 - [ ] Session 03: Recoding data
 - [ ] Session 04: Bivariate analysis
+
+##### A. Subsetting
+
+```
+wbr_2011=wbr[wbr.yr==0] --> year 2011.
+wbr_2012=wbr[wbr.yr==1] --> year 2012.
+```
+
+##### B. Avoiding artifacts
+
+```
+plt.hist(wbr_02.temp_celsius, edgecolor="Black")
+plt.xlabel("Temp_Celsius")
+```
+![Temp_celsius](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/05.png)
+
+```
+wbr.temp_celsius.describe()
+```
+
+![temp_celsius_describe](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/20.png)
+
+##### Delete wrong values
+
+```
+wbr_02['temp_celsius_c']=wbr_02.temp_celsius.replace(99,np.nan)
+```
+```
+wbr_02.temp_celsius_c.describe()
+```
+![temp_celsius_describe](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/21.png)
+
+##### Plot the data
+
+```
+plt.hist(wbr_02.temp_celsius_c, edgecolor="Black")
+plt.xlabel("Temp_Celsius")
+plt.ylabel("Frecuency")
+plt.title ("Temperature in Washington DC. 2011-2012" "\n")
+```
+![temp_celsius_plot](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/06.png)
+
 
