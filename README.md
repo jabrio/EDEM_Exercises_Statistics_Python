@@ -5,11 +5,11 @@
 Activities that we carried out for statistics subject at EDEM
 
 
-**00.Objectives**
+**00_Objectives**
 
 ```
-Make you fluent and comfortable in data management with Python.
-Make you competent in data-based decision making.
-Learning to learn Python autonomously.
+- Make you fluent and comfortable in data management with Python.
+- Make you competent in data-based decision making.
+- Learning to learn Python autonomously.
 ```
 
