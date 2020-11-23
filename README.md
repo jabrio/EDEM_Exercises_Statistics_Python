@@ -264,7 +264,7 @@ plt.title("Quality Control OK" "\n")
 ##### A. Mean comparisons (Nominal vs Quantitative)
 
 ###### Why some days are rent more bikes than other days in Washington D.C.?
-###### Case 01: Number of rentals vs is/not working day
+#### Case 01: Number of rentals by working day
 
 ##### Describing "Working day"
 
@@ -306,4 +306,133 @@ plt.title('Figure 03. Percentage of Working Days')
 ##### ¿Rentals depend on the working day?
 
 ![WD+CNT](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/22.png)
+
+```
+wbr.groupby("wd_cat").cnt.mean()
+```
+No = **4330.17** | Yes = **4584.82**
+
+##### T test
+
+```
+cnt_wd=wbr.loc[wbr.wd_cat=='Yes', "cnt"]
+cnt_nwd=wbr.loc[wbr.wd_cat=='No', "cnt"]
+```
+```
+stats.ttest_ind(cnt_wd, cnt_nwd, equal_var = False)
+```
+Ttest = **1.601** | pval = **0.11**
+
+**pval>0.05 --> Rentals in Working day = Rentals in Holidays**
+
+##### Plot the data
+
+```
+plt.figure(figsize=(5,5))
+ax = sns.pointplot(x="wd_cat", y="cnt", data=wbr,ci=95, join=0) 
+plt.yticks(np.arange(3000, 7000, step=500))
+plt.ylim(2800,6200)
+plt.axhline(y=M,
+            linewidth=1,
+            linestyle= 'dashed',
+            color="green")
+props = dict(boxstyle="round" ,facecolor="White", lw=0.5)
+text_1='Mean:4504.3''\n''n:731' '\n' 't:1.601' '\n' 'Pval.:0.110'
+plt.text(0.95, 5500,text_1, bbox=props)
+plt.xlabel('Working Day')
+plt.title('Figure 04. Average rentals by Working Day.''\n')
+```
+![Mean_Comparison_WD](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/09.png)
+
+#### Case 02: Number of rentals by year
+
+##### Recoding
+
+```
+wbr["wd_yr"] = wbr.yr
+wbr.wd_yr = wbr.wd_yr.replace(to_replace=0, value="2011")
+wbr.wd_yr = wbr.wd_yr.replace(to_replace=1, value="2012")
+
+my_categories2=["2011", "2012"]
+my_datatype2=CategoricalDtype(categories=my_categories2, ordered=True)
+wbr["wd_cat_yr"] = wbr.wd_yr.astype(my_datatype2)
+```
+
+##### T test
+
+```
+cnt_wd_=wbr.loc[wbr.wd_cat_yr=='2011', "cnt"]
+cnt_nwd_=wbr.loc[wbr.wd_cat_yr=='2012', "cnt"]
+```
+```
+stats.ttest_ind(cnt_wd_, cnt_nwd_, equal_var = False)
+```
+Ttest = **18.577** | pval = **0.000**
+
+**pval<0.05 --> Rentals in 2011 ≠ Rentals in 2012**
+
+##### Plot the data
+
+```
+plt.figure(figsize=(5,5))
+ax = sns.pointplot(x="yr", y="cnt", data=wbr,ci=95, join=0) 
+plt.yticks(np.arange(3000, 7000, step=500))
+plt.ylim(2800,6200)
+plt.axhline(y=M,
+            linewidth=1,
+            linestyle= 'dashed',
+            color="green")
+props = dict(boxstyle="round" ,facecolor="White", lw=0.5)
+text_1='Mean:4504.3''\n''n:731' '\n' 't:18.6' '\n' 'Pval.:0.000'
+plt.text(-0.4, 5500,text_1, bbox=props)
+plt.xticks((0,1), ("2011", "2012"))
+plt.xlabel("year")
+plt.title('Figure 05. Average rentals by year.''\n')
+```
+![Mean_Comparison_WD](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/10.png)
+
+#### Case 03: Number of rentals by Weather situation
+
+```
+wbr.groupby('ws').cnt.mean()
+```
+Cloudy = **4035.862** | Rainy = **1803.285** | Sunny = **4876.786**
+
+##### T test
+
+```
+cnt_sunny=wbr.loc[wbr.ws=='Sunny', "cnt"] 
+cnt_cloudy=wbr.loc[wbr.ws=='Cloudy', "cnt"]
+cnt_rainy=wbr.loc[wbr.ws=='Rainy', "cnt"]
+```
+```
+stats.f_oneway(cnt_sunny, cnt_cloudy, cnt_rainy)
+```
+Ttest = **40.066** | pval = **0.000**
+
+**pval<0.05 --> Rentals differ in at least 2 of the 3 groups compared.
+
+##### Plot the data
+
+```
+plt.figure(figsize=(5,5))
+ax = sns.pointplot(x="ws", y="cnt", data=wbr,ci=99.9, join=0) 
+plt.yticks(np.arange(1000, 7000, step=500))
+plt.ylim(800,6200)
+plt.axhline(y=M,
+            linewidth=1,
+            linestyle= 'dashed',
+            color="green")
+props = dict(boxstyle="round" ,facecolor="White", lw=0.5)
+text_1='Mean:4504.3''\n''n:731' '\n' 'F:40.06' '\n' 'Pval.:0.000'
+plt.text(1.6, 5000,text_1, bbox=props)
+plt.xlabel("\n" "year")
+plt.title('Figure 06. Average rentals by weather situation.''\n')
+```
+![Mean_Comparison_WD](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/11.png)
+
+
+
+
+
 
