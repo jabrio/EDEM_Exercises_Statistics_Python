@@ -429,7 +429,7 @@ plt.text(1.6, 5000,text_1, bbox=props)
 plt.xlabel("\n" "year")
 plt.title('Figure 06. Average rentals by weather situation.''\n')
 ```
-
+![Mean_Comparison_WD](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/11.png)
 
 
 
