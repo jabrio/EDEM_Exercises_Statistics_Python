@@ -55,6 +55,6 @@ wbr.tail()
 ```
 wbr.cnt.describe()
 ```
-![wbr.cnt.describe](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/19.png =100x100)
+![wbr.cnt.describe](https://github.com/jabrio/EDEM_Exercises_Statistics_Python/blob/main/Images/19.png) { width:100ps; }
 
 
